@@ -36,3 +36,14 @@ Some fancy set unicode shenanigans:
 A graph &#120126; is a pairing of:
 * a set of vertices &#120141;
 * a set of edges &#120124; ⊆ ( &#120141; × &#120141; )
+
++++
+
+In Haskell:
+
+```haskell
+data G a = G
+  { vertices :: [a]
+  , edges    :: [(a,a)]
+  }
+```
