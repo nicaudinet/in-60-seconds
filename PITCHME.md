@@ -24,3 +24,13 @@ Some fancy set unicode shenanigans:
 
 ×
 &#x00d7;
+
+---
+
+## Graph Basics
+
++++
+
+A pairing of:
+* a set &#120141; of vertices
+* a set &#120124; ⊆ &#120141; &#x00d7; &#120141;
