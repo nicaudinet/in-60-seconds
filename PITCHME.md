@@ -12,6 +12,8 @@ Some fancy set unicode shenanigans:
 
 &#120124; this is a cool E
 
+&#120126;
+
 &#8712;
 &#x2208;
 ∈
@@ -31,6 +33,6 @@ Some fancy set unicode shenanigans:
 
 +++
 
-A pairing of:
-* a set &#120141; of vertices
-* a set &#120124; ⊆ &#120141; &#x00d7; &#120141;
+A graph &#120126; is a pairing of:
+* a set of vertices &#120141;
+* a set of edges &#120124; ⊆ ( &#120141; × &#120141; )
