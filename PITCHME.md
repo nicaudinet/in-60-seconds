@@ -8,5 +8,19 @@ February 2019
 
 Some fancy set unicode shenanigans:
 
-ℙℤℝd54ᵔd
-&#120141;
+&#120141; this is a cool V
+
+&#120124; this is a cool E
+
+&#8712;
+&#x2208;
+∈
+
+∅
+&#x2205;
+
+⊆
+&#x2286;
+
+×
+&#x00d7;
