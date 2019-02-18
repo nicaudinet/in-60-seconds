@@ -1,5 +1,16 @@
 # Let's Do This!
 
++++
+
+Here is some (hopefully syntax highlighted) code:
+
+```haskell
+data Graph a
+  = Empty
+  | Vertex a
+  | Overlay (Graph a) (Graph a)
+  | Connect (Graph a) (Graph a)
+```
 ---
 
 ## Add Some Slide Candy
