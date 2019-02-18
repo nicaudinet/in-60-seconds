@@ -1,8 +1,6 @@
-# Algebraic Graphs
+## Algebraic Graphs
 
-Nicolas Audinet
-
-RELEX Solutions
+Nicolas Audinet, RELEX
 
 February 2019
 
@@ -10,4 +8,5 @@ February 2019
 
 Some fancy set unicode shenanigans:
 
-葳ℙ
+ℙℤℝd54ᵔd
+&#x1D54D
