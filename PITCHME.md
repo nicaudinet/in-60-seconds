@@ -8,8 +8,7 @@ February 2019
 
 * All the concepts and code from this presentation
 are taken from Andrey Mokhov's paper
-**Algebraic Graphs with Class**
-(https://bit.ly/2Gxnn1G)
+@color[orange]([**Algebraic Graphs with Class**](https://bit.ly/2Gxnn1G))
 
 * **algebraic-graphs** on Hackage
 
