@@ -71,3 +71,21 @@ data Graph a
 Empty
 
 ![Empty image](assets/img/empty.png)
+
++++
+
+Vertex a
+
+![Vertex image](assets/img/vertex.png)
+
++++
+
+Overlay (Graph a) (Graph a)
+
+![Overlay image](assets/img/overlay.png)
+
++++
+
+Connect (Graph a) (Graph a)
+
+![Connect image](assets/img/connect.png)
