@@ -38,7 +38,7 @@ Some fancy set unicode shenanigans:
 
 ---
 
-## What is a graph?
+### What is a graph?
 
 A graph &#120126; ( *V*, *E* ) is a pairing of:
 * a set of vertices *V* &#x2286; &#120141;
@@ -69,6 +69,8 @@ since *E* &#x2286; (&#120141; × &#120141;)
 
 ---
 
+### Algebraic Graphs
+
 ```haskell
 data Graph a
   = Empty
@@ -79,47 +81,29 @@ data Graph a
 
 +++
 
-Empty
+**Empty** = &#x03b5; = (&#x2205;, &#x2205;)
 
 ![Empty image](assets/img/empty.png)
 
 +++
 
-Vertex a
+**Vertex *v*** = ( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
 
 ![Vertex image](assets/img/vertex.png)
 
 +++
 
-Overlay (Graph a) (Graph a)
+**Overlay (Graph a) (Graph a)**
+
+(*V*<sub>1</sub> , *E*<sub>1</sub> ) + (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
 
 ![Overlay image](assets/img/overlay.png)
 
 +++
 
-Connect (Graph a) (Graph a)
+**Connect (Graph a) (Graph a)**
 
 ![Connect image](assets/img/connect.png)
-
----
-
-## Set Semantics
-
-+++
-
-Empty = &#x03b5; = (&#x2205;, &#x2205;)
-
-Vertex *v* = ( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
-
-+++
-
-**Overlay**
-
-(*V*<sub>1</sub> , *E*<sub>1</sub> ) + (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
-
-+++
-
-**Connect**
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
 
