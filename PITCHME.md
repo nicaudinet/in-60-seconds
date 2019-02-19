@@ -8,7 +8,7 @@ February 2019
 
 * All the concepts and code from this presentation
 are taken from Andrey Mokhov's paper
-@css[link]([**Algebraic Graphs with Class**](https://bit.ly/2Gxnn1G))
+**Algebraic Graphs with Class**(https://bit.ly/2Gxnn1G))
 
 * **algebraic-graphs** on Hackage
 
@@ -294,4 +294,45 @@ instance Graph g => Transpose (Graph g) where
   overlay = T $ overlay (transpose x) (transpose y)
   connect = T $ connect (transpose y) (transpose x)
 ```
+
+---
+
+## Graph Functor
+
++++
+
+Implemented as a newtype wrapper:
+
+```haskell
+newtype GraphFunctor a =
+  F { gfor :: forall g. Graph g => (a -> Vertex g) -> g }
+```
+
++++
+
+Pushes a function all the way to the leaves in a graph expression.
+
+```haskell
+instance Graph (GraphFunctor a) where
+  type Vertex (GraphFunctor a) = a
+  empty       = F $ \ _ -> empty
+  vertex  x   = F $ \f -> vertex (f x)
+  overlay x y = F $ \f -> overlay (gmap f x) (gmap f y)
+  connect x y = F $ \f -> connect (gmap f x) (gmap f y)
+```
+
++++
+
+```haskell
+gmap :: Graph g => (a -> Vertex g) -> GraphFunctor a -> g
+gmap = flip gfor
+```
+
+Not exactly a functor because Graph is not a higher-kinded type
+
+---
+
+### Benchmarks
+
+https://github.com/haskell-perf/graphs/tree/master/results
 
