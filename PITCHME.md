@@ -107,13 +107,13 @@ Vertex *v* = ( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
 
 +++
 
-Overlay
+**Overlay**
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) + (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
 
 +++
 
-Connect
+**Connect**
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
 
@@ -121,7 +121,9 @@ Connect
 
 ## Axioms
 
-\+ is commutative and associative
++++
+
+**\+ is commutative and associative**
 
 x + y = y + x
 
@@ -129,17 +131,17 @@ x + (y + z) = (x + y) + z
 
 +++
 
-(G,\*,&#x03b5;) is a monoid
+**(G , \* , &#x03b5;) is a monoid**
 
 x \* &#x03b5; = x
 
 &#x03b5; \* x = x
 
-x * (y * z) = (x * y) * z
+x \* (y \* z) = (x \* y) \* z
 
 +++
 
-\* distributes over +
+**\* distributes over +**
 
 x \* (y + z) = (x \* y) + (x \* z)
 
@@ -147,7 +149,7 @@ x \* (y + z) = (x \* y) + (x \* z)
 
 +++
 
-Decomposition
+**Decomposition**
 
 x \* y \* z = (x \* y) + (x \* z) + (y \* z)
 
