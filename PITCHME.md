@@ -393,7 +393,12 @@ instance Graph (GraphMonad a) where
 Merge vertices together
 
 ```haskell
-mergeVertices :: Graph g => (Vertex g -> Bool) -> Vertex g -> GraphFunctor (Vertex g) -> g
+mergeVertices
+  :: Graph g
+  => (Vertex g -> Bool)
+  -> Vertex g
+  -> GraphFunctor (Vertex g)
+  -> g
 mergeVertices p v = gmap $ \u -> if p u then v else u
 ```
 
