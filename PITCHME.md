@@ -81,13 +81,17 @@ data Graph a
 
 +++
 
-**Empty** = &#x03b5; = (&#x2205;, &#x2205;)
+**Empty**
+
+&#x03b5; = (&#x2205;, &#x2205;)
 
 ![Empty image](assets/img/empty.png)
 
 +++
 
-**Vertex *v*** = ( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
+**Vertex *v***
+
+( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
 
 ![Vertex image](assets/img/vertex.png)
 
