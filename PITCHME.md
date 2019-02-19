@@ -89,3 +89,11 @@ Overlay (Graph a) (Graph a)
 Connect (Graph a) (Graph a)
 
 ![Connect image](assets/img/connect.png)
+
+---
+
+@title[Semantics]
+
+Empty == (&#x2205;, &#x2205;)
+
+Vertex a ==
