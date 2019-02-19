@@ -255,16 +255,20 @@ data Relation a = R
 +++
 
 ```haskell
-import           Data.Set (Set, singleton, union, elems, fromAscList)
+import           Data.Set
 import qualified Data.Set as S (empty)
 
 instance Ord a => Graph (Relation a) where
   type Vertex (Relation a) = a
   empty = R S.empty S.empty
   vertex x = R (singleton x) S.empty
-  overlay x y = R (domain x `union` domain y) (relation x `union` relation y)
-  connect x y = R (domain x `union` domain y) (relation x `union` relation y `union`
-    fromAscList [ (a,b) | a <- elems (domain x), b <- elems (domain y) ]
+  overlay x y = R vs es
+    where vs = domain x `union` domain y
+          es = relation x `union` relation y
+  connect x y = R vs es
+    where vs = domain x `union` domain y
+          es = relation x `union` relation y `union`
+                  (domain x `setProduct` domain y)
 ```
 
 +++
