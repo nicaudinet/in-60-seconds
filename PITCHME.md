@@ -8,6 +8,9 @@ February 2019
 
 Some fancy set unicode shenanigans:
 
+ε
+&#03b5;
+
 &#120141; this is a cool V
 
 &#120124; this is a cool E
@@ -94,12 +97,78 @@ Connect (Graph a) (Graph a)
 
 ---
 
-@title[Semantics]
+## Set Semantics
 
-Empty = (&#x2205;, &#x2205;)
++++
 
-Vertex a = ( {a}, &#x2205;)
+Empty = &#x03b5; = (&#x2205;, &#x2205;)
+
+Vertex *v* = ( {*v*}, &#x2205;) where *v* &#x2208; &#120141;
+
++++
+
+Overlay
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) + (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
 
-(*V*<sub>1</sub> , *E*<sub>1</sub> ) * (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
++++
+
+Connect
+
+(*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
+
+---
+
+## Axioms
+
+\+ is commutative and associative
+
+x + y = y + x
+
+x + (y + z) = (x + y) + z
+
++++
+
+(G,\*,&#x03b5;) is a monoid
+
+x \* &#x03b5; = x
+
+&#x03b5; \* x = x
+
+x * (y * z) = (x * y) * z
+
++++
+
+\* distributes over +
+
+x \* (y + z) = (x \* y) + (x \* z)
+
+(x + y) \* z = (x \* z) + (y \* z)
+
++++
+
+Decomposition
+
+x \* y \* z = (x \* y) + (x \* z) + (y \* z)
+
+---
+
+```haskell
+class Graph g where
+  type Vertex g
+  empty   :: g
+  vertex  :: Vertex g -> g
+  overlay :: g -> g -> g
+  connect :: g -> g -> g
+```
+
++++
+
+```haskell
+edge :: Graph g => Vertex g -> Vertex g -> g
+edge x y = connect (vertex x) (vertex y)
+```
+
+```haskell
+vertices :: Graph g => 
+```
