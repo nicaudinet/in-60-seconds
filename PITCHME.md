@@ -366,6 +366,75 @@ Not exactly a functor because Graph is not a higher-kinded type
 
 ---
 
+## Graph Monad
+
+```haskell
+newtype GraphMonad a =
+  M { bind :: forall g.  Graph g => (a -> g) -> g }
+```
+
++++
+
+```haskell
+instance Graph (GraphMonad a) where
+  type Vertex (GraphMonad a) = a
+  empty       = M $ \ _ -> empty
+  vertex  x   = M $ \f -> f x
+  overlay x y = M $ \f -> overlay (bind x f) (bind y f)
+  connect x   = M $ \f -> connect (bind x f) (bind y f)
+```
+
+---
+
+## Vertex Operations
+
++++
+
+Merge vertices together
+
+```haskell
+mergeVertices :: Graph g => (Vertex g -> Bool) -> Vertex g -> GraphFunctor (Vertex g) -> g
+mergeVertices p v = gmap $ \u -> if p u then v else u
+```
+
++++
+
+Remove a vertex
+
+```haskell
+induce
+  :: Graph g
+  => (Vertex g -> Bool)
+  -> GraphMonad (Vertex g)
+  -> g
+induce p g = bind g $
+  \v -> if p v then vertex v else empty
+
+removeVertex
+  :: (Graph g, Eq (Vertex g))
+  => Vertex g
+  -> GraphMonad (Vertex g)
+  -> g
+removeVertex v = induce (/= v)
+```
+
++++
+
+Split a vertex
+
+```haskell
+splitVertex
+  :: (Graph g, Eq (Vertex g))
+  => Vertex g
+  -> [Vertex g]
+  -> GraphMonad (Vertex g)
+  -> g
+splitVertex v vs g = bind g $
+  \u -> if u == v then vertices v else vertex u
+```
+
+---
+
 ## Benchmarks
 
 https://github.com/haskell-perf/graphs/tree/master/results
