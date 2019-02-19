@@ -14,7 +14,7 @@ are taken from Andrey Mokhov's paper
 
 ---
 
-### What is a graph?
+## What is a graph?
 
 A graph &#120126; ( *V*, *E* ) is a pairing of:
 * a set of vertices *V* &#x2286; &#120141;
@@ -45,7 +45,7 @@ since *E* &#x2286; (&#120141; × &#120141;)
 
 ---
 
-### Algebraic Graphs
+## Algebraic Graphs
 
 ```haskell
 data Graph a
@@ -161,7 +161,7 @@ Therefore we cannot construct an incorrect graph.
 
 ---
 
-### The Typeclass
+## The Typeclass
 
 ```haskell
 class Graph g where
@@ -192,7 +192,7 @@ graph vs es = overlay (vertices vs) (edges vs)
 
 ---
 
-### Subgraph
+## Subgraph
 
 If **x + y = y** then x is a subgraph of y
 
@@ -277,7 +277,23 @@ instance Ord a => Eq (Graph a) where
 
 ---
 
-### Undirected Graphs
+## Undirected Graphs
+
+Let Connect be commutative:
+
+x \* y = y \* x
+
++++
+
+*symmetric closure* of the binary relation
+
+```haskell
+data Symmetric a = S (Relation a)
+  deriving (Graph, Num)
+
+instance Ord a => Eq (Symmetric a) where
+  S x == S y = symmetricClosure x == symmetricClosure y
+```
 
 ---
 
@@ -334,7 +350,7 @@ Not exactly a functor because Graph is not a higher-kinded type
 
 ---
 
-### Benchmarks
+## Benchmarks
 
 https://github.com/haskell-perf/graphs/tree/master/results
 
