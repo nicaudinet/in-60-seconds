@@ -6,11 +6,12 @@ February 2019
 
 +++
 
-All the concepts and code from this presentation
+* All the concepts and code from this presentation
 are taken from Andrey Mokhov's paper
 **Algebraic Graphs with Class**
+(https://bit.ly/2Gxnn1G)
 
-https://eprint.ncl.ac.uk/file_store/production/239461/EF82F5FE-66E3-4F64-A1AC-A366D1961738.pdf
+* **algebraic-graphs** on Hackage
 
 ---
 
@@ -289,8 +290,8 @@ Zero cost: all the transposing is handled by GHC at compile time.
 ```haskell
 instance Graph g => Transpose (Graph g) where
   type Vertex (Transpose g) = Vertex g
-  empty = T empty
-  vertex = T . vertex
+  empty   = T empty
+  vertex  = T . vertex
   overlay = T $ overlay (transpose x) (transpose y)
   connect = T $ connect (transpose y) (transpose x)
 ```
