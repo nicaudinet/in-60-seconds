@@ -100,4 +100,4 @@ Empty = (&#x2205;, &#x2205;)
 
 Vertex a = ( {a}, &#x2205;)
 
-Overlay (*V*_1 , *E*_1 ) (*V*_2 , *E*_2 ) = (*V*_1 &#x222a; *V*_2 , *E*_1 &#x222a; *E*_2 )
+Overlay (*V*<sub>1</sub> , *E*<sub>1</sub> ) (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
