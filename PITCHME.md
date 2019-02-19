@@ -6,35 +6,9 @@ February 2019
 
 +++
 
-Some fancy set unicode shenanigans:
-
-ε
-&#03b5;
-
-&#120141; this is a cool V
-
-&#120124; this is a cool E
-
-&#120126;
-
-&#8712;
-&#x2208;
-∈
-
-∅
-&#x2205;
-
-⊆
-&#x2286;
-
-×
-&#x00d7;
-
-∪
-&#x222a;
-
-⇒
-&#x21d2;
+All the concepts and code from this presentation
+are taken from Andrey Mokhov's paper
+[Algebraic Graphs with Class](assets/alga.pdf)
 
 ---
 
@@ -306,9 +280,9 @@ newtype Transpose g = T { transpose :: g }
   deriving Eq
 ```
 
-Zero cost: all the transposing is handled by GHC at compile time.
-
 +++
+
+Zero cost: all the transposing is handled by GHC at compile time.
 
 ```haskell
 instance Graph g => Transpose (Graph g) where
