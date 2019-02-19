@@ -70,4 +70,4 @@ data Graph a
 
 Empty
 
-![](assets/img/empty.svg)
+![Empty image](assets/img/empty.png)
