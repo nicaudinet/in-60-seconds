@@ -228,7 +228,7 @@ proof of completeness
 
 ## Subgraph
 
-If `x + y = y` then x is a subgraph of y
+If **x + y = y** then x is a subgraph of y
 
 +++
 
@@ -238,9 +238,9 @@ x + y = y
 
 therefore
 
-*V*<sub>x</sub> &#x222a; *V*<sub>y</sub> = *V*<sub>y</sub> ⇒ *V*<sub>x</sub> &#x2286; *V*<sub>y</sub>
+*V*<sub>x</sub> &#x222a; *V*<sub>y</sub> = *V*<sub>y</sub>   ⇒   *V*<sub>x</sub> &#x2286; *V*<sub>y</sub>
 
-*E*<sub>x</sub> &#x222a; *E*<sub>y</sub> = *E*<sub>y</sub> ⇒ *E*<sub>x</sub> &#x2286; *E*<sub>y</sub>
+*E*<sub>x</sub> &#x222a; *E*<sub>y</sub> = *E*<sub>y</sub>   ⇒   *E*<sub>x</sub> &#x2286; *E*<sub>y</sub>
 
 +++
 
