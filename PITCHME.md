@@ -159,6 +159,34 @@ x \* y \* z = (x \* y) + (x \* z) + (y \* z)
 
 ---
 
+## Soundness
+
++++
+
+**Absorption theorem**
+
+(x \* y) + x + y = x \* y
+
++++
+
+Proof using decomposition:
+
+x \* y
+
+= *right identity*
+
+x \* y \* &#x03b5;
+
+= *decomposition*
+
+x \* y + x \* &#x03b5; + y \* &#x03b5;
+
+= *right identity*
+
+x \* y + x + y
+
+---
+
 ```haskell
 class Graph g where
   type Vertex g
@@ -179,3 +207,15 @@ edge x y = connect (vertex x) (vertex y)
 vertices :: Graph g => [Vertex g] -> g
 vertices = foldr overlay empty . map vertex
 ```
+
+```haskell
+edges :: Graph g => [(Vertex g, Vertex g)] -> g
+edges = foldr overlay empty . map (uncurry edge)
+```
+
+```haskell
+graph :: Graph g => [Vertex g] -> [(Vertex g, Vertex g)] -> g
+graph vs es = overlay (vertices vs) (edges vs)
+```
+
+-> proof of completeness
