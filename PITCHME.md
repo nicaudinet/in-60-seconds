@@ -244,5 +244,7 @@ therefore
 
 +++
 
+```haskell
 isSubgraphOf :: (Graph g, Eq g) => g -> g -> Bool
 isSubgraphOf x y = overlay x y == y
+```
