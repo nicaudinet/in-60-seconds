@@ -199,19 +199,13 @@ class Graph g where
 ```haskell
 edge :: Graph g => Vertex g -> Vertex g -> g
 edge x y = connect (vertex x) (vertex y)
-```
 
-```haskell
 vertices :: Graph g => [Vertex g] -> g
 vertices = foldr overlay empty . map vertex
-```
 
-```haskell
 edges :: Graph g => [(Vertex g, Vertex g)] -> g
 edges = foldr overlay empty . map (uncurry edge)
-```
 
-```haskell
 graph :: Graph g => [Vertex g] -> [(Vertex g, Vertex g)] -> g
 graph vs es = overlay (vertices vs) (edges vs)
 ```
