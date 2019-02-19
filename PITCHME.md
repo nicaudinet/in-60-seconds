@@ -93,7 +93,7 @@ data Graph a
 
 +++
 
-**Overlay (Graph a) (Graph a)**
+**Overlay g g**
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) + (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> )
 
@@ -101,11 +101,11 @@ data Graph a
 
 +++
 
-**Connect (Graph a) (Graph a)**
-
-![Connect image](assets/img/connect.png)
+**Connect g g**
 
 (*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
+
+![Connect image](assets/img/connect.png)
 
 ---
 
