@@ -179,7 +179,11 @@ x \* y
 
 Therefore we cannot construct an incorrect graph.
 
+**proof of soundness**  
+
 ---
+
+### The Typeclass
 
 ```haskell
 class Graph g where
@@ -212,11 +216,11 @@ graph :: Graph g => [Vertex g] -> [(Vertex g, Vertex g)] -> g
 graph vs es = overlay (vertices vs) (edges vs)
 ```
 
-proof of completeness
+**proof of completeness**
 
 ---
 
-## Subgraph
+### Subgraph
 
 If **x + y = y** then x is a subgraph of y
 
@@ -238,3 +242,63 @@ therefore
 isSubgraphOf :: (Graph g, Eq g) => g -> g -> Bool
 isSubgraphOf x y = overlay x y == y
 ```
+
+---
+
+## Equality
+
++++
+
+A binary relation
+
+```haskell
+data Relation a = R
+  { domain   :: Set a
+  , relation :: Set (a,a)
+  } deriving Eq
+```
+
++++
+
+```haskell
+import           Data.Set (Set, singleton, union, elems, fromAscList)
+import qualified Data.Set as S (empty)
+
+instance Ord a => Graph (Relation a) where
+  type Vertex (Relation a) = a
+  empty = R S.empty S.empty
+  vertex x = R (singleton x) S.empty
+  overlay x y = R (domain x `union` domain y) (relation x `union` relation y)
+  connect x y = R (domain x `union` domain y) (relation x `union` relation y `union`
+    fromAscList [ (a,b) | a <- elems (domain x), b <- elems (domain y) ]
+```
+
++++
+
+This representation is unique!
+Can be used to test for equality.
+
++++
+
+Converting the Graph data type
+
+```haskell
+fold :: Graph g => Graph ( Vertex g) -> g
+fold Empty         = empty
+fold ( Vertex x  ) = vertex x
+fold ( Overlay x y) = overlay (fold x) (fold y)
+fold ( Connect x y) = connect (fold x) (fold y)
+```
+
++++
+
+Equality
+
+```haskell
+instance Ord a => Eq (Graph a) where
+  x == y = fold x == (fold y :: Relation a)
+```
+
++++
+
+Compactness
