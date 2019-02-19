@@ -27,6 +27,8 @@ Some fancy set unicode shenanigans:
 ×
 &#x00d7;
 
+∪
+&#x222a;
 ---
 
 ## Graph Basics
@@ -94,6 +96,8 @@ Connect (Graph a) (Graph a)
 
 @title[Semantics]
 
-Empty == (&#x2205;, &#x2205;)
+Empty = (&#x2205;, &#x2205;)
 
-Vertex a ==
+Vertex a = ( {a}, &#x2205;)
+
+Overlay (*V*_1 , *E*_1 ) (*V*_2 , *E*_2 ) = (*V*_1 &#x222a; *V*_2 , *E*_1 &#x222a; *E*_2 )
