@@ -33,7 +33,7 @@ Some fancy set unicode shenanigans:
 
 +++
 
-A graph &#120126; is a pairing of:
+A graph &#120126; ( &#120141;, &#120124; ) is a pairing of:
 * a set of vertices &#120141;
 * a set of edges &#120124; ⊆ ( &#120141; × &#120141; )
 
@@ -47,3 +47,27 @@ data G a = G
   , edges    :: [(a,a)]
   }
 ```
+
++++
+
+The Problem:
+
+You can represent things that are not graphs
+
+e.g. G [1] [(1,2)]
+
+---
+
+```haskell
+data Graph a
+  = Empty
+  | Vertex a
+  | Overlay (Graph a) (Graph a)
+  | Connect (Graph a) (Graph a)
+```
+
++++
+
+Empty
+
+![](assets/img/empty.svg)
