@@ -181,9 +181,9 @@ x \* y
 
 +++
 
-Absorption implies that *edges are inseparable from their vertices*.
+> *edges are inseparable from their vertices*
 
-Therefore we cannot construct an incorrect graph
+Therefore we cannot construct an incorrect graph.
 
 ---
 
