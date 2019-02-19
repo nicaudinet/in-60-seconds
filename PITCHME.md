@@ -8,8 +8,9 @@ February 2019
 
 All the concepts and code from this presentation
 are taken from Andrey Mokhov's paper
+**Algebraic Graphs with Class**
 
-[Algebraic Graphs with Class](https://eprint.ncl.ac.uk/file_store/production/239461/EF82F5FE-66E3-4F64-A1AC-A366D1961738.pdf)
+https://eprint.ncl.ac.uk/file_store/production/239461/EF82F5FE-66E3-4F64-A1AC-A366D1961738.pdf
 
 ---
 
