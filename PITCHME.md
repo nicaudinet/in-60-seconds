@@ -173,17 +173,17 @@ Proof using decomposition:
 
 x \* y
 
-= *right identity*
+= x \* y \* &#x03b5;
 
-x \* y \* &#x03b5;
+= x \* y + x \* &#x03b5; + y \* &#x03b5;
 
-= *decomposition*
+= x \* y + x + y
 
-x \* y + x \* &#x03b5; + y \* &#x03b5;
++++
 
-= *right identity*
+Absorption implies that *edges are inseparable from their vertices*.
 
-x \* y + x + y
+Therefore we cannot construct an incorrect graph
 
 ---
 
