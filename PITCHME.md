@@ -297,6 +297,22 @@ instance Ord a => Eq (Symmetric a) where
 
 ---
 
+## Reflexive Graphs
+
+Add the *self-loop* axiom:
+
+v = v \* v where v &#x2208; &#120141;
+
+---
+
+## Transitive Graphs
+
+Add the *closure* axiom:
+
+y /= &#120124; ⇒ x \* y + y \* z + x \* z = x \* y + y \* z
+
+---
+
 ## Graph Transpose
 
 ```haskell
