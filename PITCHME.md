@@ -147,11 +147,15 @@ x \* (y + z) = (x \* y) + (x \* z)
 
 (x + y) \* z = (x \* z) + (y \* z)
 
+![Distributivity](assets/img/distributivity.png)
+
 +++
 
 **Decomposition**
 
 x \* y \* z = (x \* y) + (x \* z) + (y \* z)
+
+![Decomposition](assets/img/decomposition.png)
 
 ---
 
@@ -172,5 +176,6 @@ edge x y = connect (vertex x) (vertex y)
 ```
 
 ```haskell
-vertices :: Graph g => 
+vertices :: Graph g => [Vertex g] -> g
+vertices = foldr overlay empty . map vertex
 ```
