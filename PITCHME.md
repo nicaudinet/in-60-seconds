@@ -8,7 +8,7 @@ February 2019
 
 * All the concepts and code from this presentation
 are taken from Andrey Mokhov's paper
-**Algebraic Graphs with Class**(https://bit.ly/2Gxnn1G))
+**Algebraic Graphs with Class**(https://bit.ly/2Gxnn1G)
 
 * **algebraic-graphs** on Hackage
 
@@ -55,6 +55,8 @@ data Graph a
   | Connect (Graph a) (Graph a)
 ```
 
+> labelled vertices and unlabelled edges
+
 +++
 
 **Empty**
@@ -83,7 +85,7 @@ data Graph a
 
 **Connect g g**
 
-(*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>)
+(*V*<sub>1</sub> , *E*<sub>1</sub> ) \* (*V*<sub>2</sub> , *E*<sub>2</sub> ) = (*V*<sub>1</sub> &#x222a; *V*<sub>2</sub> , *E*<sub>1</sub> &#x222a; *E*<sub>2</sub> &#x222a; ( *V*<sub>1</sub> × *V*<sub>2</sub>))
 
 ![Connect image](assets/img/connect.png)
 
@@ -275,6 +277,10 @@ instance Ord a => Eq (Graph a) where
 
 ---
 
+### Undirected Graphs
+
+---
+
 ## Graph Transpose
 
 ```haskell
@@ -298,10 +304,6 @@ instance Graph g => Transpose (Graph g) where
 ---
 
 ## Graph Functor
-
-+++
-
-Implemented as a newtype wrapper:
 
 ```haskell
 newtype GraphFunctor a =
