@@ -38,13 +38,13 @@ Some fancy set unicode shenanigans:
 
 ---
 
-## Graph Basics
+## What is a graph?
 
-+++
+A graph &#120126; ( *V*, *E* ) is a pairing of:
+* a set of vertices *V* &#x2286; &#120141;
+* a set of edges *E* ⊆ ( *V* × *V* )
 
-A graph &#120126; ( &#120141;, &#120124; ) is a pairing of:
-* a set of vertices &#120141;
-* a set of edges &#120124; ⊆ ( &#120141; × &#120141; )
+where &#120141; is the set of all possible vertices
 
 +++
 
@@ -61,9 +61,11 @@ data G a = G
 
 The Problem:
 
-You can represent things that are not graphs
+You can represent things that are not graphs!
 
 e.g. G [1] [(1,2)]
+
+since *E* &#x2286; (&#120141; × &#120141;)
 
 ---
 
