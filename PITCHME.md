@@ -283,9 +283,9 @@ Converting the Graph data type
 ```haskell
 fold :: Graph g => Graph ( Vertex g) -> g
 fold Empty         = empty
-fold ( Vertex x  ) = vertex x
-fold ( Overlay x y) = overlay (fold x) (fold y)
-fold ( Connect x y) = connect (fold x) (fold y)
+fold (Vertex x   ) = vertex x
+fold (Overlay x y) = overlay (fold x) (fold y)
+fold (Connect x y) = connect (fold x) (fold y)
 ```
 
 +++
@@ -297,6 +297,25 @@ instance Ord a => Eq (Graph a) where
   x == y = fold x == (fold y :: Relation a)
 ```
 
+---
+
+## Graph Transpose
+
+```haskell
+newtype Transpose g = T { transpose :: g }
+  deriving Eq
+```
+
+Zero cost: all the transposing is handled by GHC at compile time.
+
 +++
 
-Compactness
+```haskell
+instance Graph g => Transpose (Graph g) where
+  type Vertex (Transpose g) = Vertex g
+  empty = T empty
+  vertex = T . vertex
+  overlay = T $ overlay (transpose x) (transpose y)
+  connect = T $ connect (transpose y) (transpose x)
+```
+
