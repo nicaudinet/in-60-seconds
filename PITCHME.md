@@ -32,6 +32,10 @@ Some fancy set unicode shenanigans:
 
 ∪
 &#x222a;
+
+⇒
+&#x21d2;
+
 ---
 
 ## Graph Basics
@@ -218,4 +222,27 @@ graph :: Graph g => [Vertex g] -> [(Vertex g, Vertex g)] -> g
 graph vs es = overlay (vertices vs) (edges vs)
 ```
 
--> proof of completeness
+proof of completeness
+
+---
+
+## Subgraph
+
+If `x + y = y` then x is a subgraph of y
+
++++
+
+x + y = y
+
+(*V*<sub>x</sub>, *E*<sub>x</sub>) + (*V*<sub>y</sub>, *E*<sub>y</sub>) = (*V*<sub>y</sub>, *E*<sub>y</sub>)
+
+therefore
+
+*V*<sub>x</sub> &#x222a; *V*<sub>y</sub> = *V*<sub>y</sub> ⇒ *V*<sub>x</sub> &#x2286; *V*<sub>y</sub>
+
+*E*<sub>x</sub> &#x222a; *E*<sub>y</sub> = *E*<sub>y</sub> ⇒ *E*<sub>x</sub> &#x2286; *E*<sub>y</sub>
+
++++
+
+isSubgraphOf :: (Graph g, Eq g) => g -> g -> Bool
+isSubgraphOf x y = overlay x y == y
